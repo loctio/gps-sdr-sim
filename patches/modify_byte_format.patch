@@ -1,0 +1,15 @@
+diff --git a/gpssim.c b/gpssim.c
+index 779454a..00ac4bf 100644
+--- a/gpssim.c
++++ b/gpssim.c
+@@ -2265,7 +2265,9 @@ int main(int argc, char *argv[])
+ 				if (isamp%8==0)
+ 					iq8_buff[isamp/8] = 0x00;
+ 
+-				iq8_buff[isamp/8] |= (iq_buff[isamp]>0?0x01:0x00)<<(7-isamp%8);
++				/* Modify the snapshot format according to Loctio's requirements.*/
++				// iq8_buff[isamp/8] |= (iq_buff[isamp]>0?0x01:0x00)<<(7-isamp%8);
++				iq8_buff[isamp/8] |= (iq_buff[isamp]<0?0x01:0x00)<<(isamp%8);
+ 			}
+ 
+ 			fwrite(iq8_buff, 1, iq_buff_size/4, fp);
