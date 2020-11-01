@@ -1,6 +1,6 @@
 SNAPSHOT_SAMPLE_PATH=/var/tmp/sample.bin
 #LOCTIO_API_HOST=192.168.11.46
-LOCTIO_API_HOST=loctio-api.ddns.net
+LOCTIO_API_HOST=api.loctio.com
 LAT="38.270181"
 LON="21.7638"
 ALT="60.0"
