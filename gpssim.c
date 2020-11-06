@@ -2010,7 +2010,7 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
-			if (subGpsTime(g0, gmin)<0.0 || subGpsTime(incGpsTime(gmax, 2 * SECONDS_IN_HOUR), g0)<0.0)
+			if (subGpsTime(g0, gmin)<0.0 || subGpsTime(incGpsTime(gmax, SECONDS_IN_HOUR), g0)<0.0)
 			{
 				fprintf(stderr, "ERROR: Invalid start time.\n");
 				fprintf(stderr, "tmin = %4d/%02d/%02d,%02d:%02d:%02.0f (%d:%.0f)\n", 
