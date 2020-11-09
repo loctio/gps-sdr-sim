@@ -1,6 +1,6 @@
 SNAPSHOT_SAMPLE_PATH=/var/tmp/sample.bin
-#LOCTIO_API_HOST=192.168.11.46
-LOCTIO_API_HOST=api.loctio.com
+LOCTIO_API_HOST=192.168.11.46
+#LOCTIO_API_HOST=api.loctio.com
 LAT="38.270181"
 LON="21.7638"
 ALT="60.0"
@@ -22,6 +22,7 @@ do
 		
 		#echo $LOCTIO_API_HOST
 		URL="http://$LOCTIO_API_HOST:50505/api/rinex?provider=nasa&ref_pos0=$LAT&ref_pos1=$LON&ref_pos2=$ALT&ref_time=$REF_TIME&raw=1"
+		echo $URL
 		curl -X GET $URL > rinex.txt
 		head -10 rinex.txt
 		GPS_SDR_SIM_CMD="./gps-sdr-sim -s 2800000 -b 1 -d 0.2 -e rinex.txt -t $DATE -l $GROUND_TRUTH -o $SNAPSHOT_SAMPLE_PATH"

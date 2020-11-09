@@ -2043,7 +2043,7 @@ int main(int argc, char *argv[])
 			if (eph[i][sv].vflg == 1)
 			{
 				dt = subGpsTime(g0, eph[i][sv].toc);
-				if (dt>=-SECONDS_IN_HOUR && dt<SECONDS_IN_HOUR)
+				if (dt>=-SECONDS_IN_HOUR && dt<2*SECONDS_IN_HOUR)
 				{
 					ieph = i;
 					break;
