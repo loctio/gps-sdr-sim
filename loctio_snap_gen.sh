@@ -21,7 +21,7 @@ do
 		echo $REF_TIME
 		
 		#echo $LOCTIO_API_HOST
-		URL="http://$LOCTIO_API_HOST:50505/api/rinex?provider=nasa&ref_pos0=$LAT&ref_pos1=$LON&ref_pos2=$ALT&ref_time=$REF_TIME&raw=1"
+		URL="http://$LOCTIO_API_HOST:50505/api/satellite/rinex?provider=nasa&ref_pos0=$LAT&ref_pos1=$LON&ref_pos2=$ALT&ref_time=$REF_TIME&raw=1"
 		echo $URL
 		curl -X GET $URL > rinex.txt
 		head -10 rinex.txt
