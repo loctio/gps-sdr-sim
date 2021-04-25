@@ -1,5 +1,4 @@
 SNAPSHOT_SAMPLE_PATH=/var/tmp/sample.bin
-#LOCTIO_API_HOST=192.168.11.46
 LOCTIO_API_HOST=api.loctio.com
 LAT="38.270181"
 LON="21.7638"
@@ -21,7 +20,7 @@ do
 		echo $REF_TIME
 		
 		#echo $LOCTIO_API_HOST
-		URL="https://$LOCTIO_API_HOST:50505/api/satellite/rinex?provider=nasa&ref_pos0=$LAT&ref_pos1=$LON&ref_pos2=$ALT&ref_time=$REF_TIME&raw=1"
+		URL="https://$LOCTIO_API_HOST:50505/api/satellite/rinex?g=GPS&provider=nasa&ref_pos0=$LAT&ref_pos1=$LON&ref_pos2=$ALT&ref_time=$REF_TIME&raw=1"
 		echo $URL
 		curl --insecure -X GET $URL > rinex.txt
 		head -10 rinex.txt
